@@ -12,9 +12,9 @@ function page1(){
       method:"GET",
       success: function(response){
           console.log(response);
-          var temp = $("#Fetch");
+          var temp = $("#user");
           temp.empty();
-          for (var i = 0; i < 7; i++){
+          for (var i = 0; i <=6; i++){
               var rec = response.data[i]
               temp.append(`<div class = "list"><p>${rec.id}</p><h3><span>Email:</span> ${rec.email}</h3><h4><span>first name:</span>${rec.first_name}</h4><h4><span>last name:</span>${rec.last_name}</h4><p><img src="'${rec.last_name}'" alt=""><p></div><br>`)
           }
@@ -29,11 +29,11 @@ function page2(){
       method:"GET",
       success: function(response){
           console.log(response);
-          var temp = $("#Fetch");
+          var temp = $("#user");
           temp.empty();
-          for (var i = 0; i < 7; i++){
+          for (var i = 0; i <= 6; i++){
               var rec = response.data[i]
-              temp.append(`<div class = "list"><p>${rec.id}</p><h3><span>Email:</span> ${rec.email}</h3><h4><span>first name:</span>${rec.first_name}</h4><h4><span>last name:</span>${rec.last_name}</h4><p><img src="'${rec.last_name}'" alt=""><p></div><br>`)
+              temp.append(`<div class = "list"><p>${rec.id}</p><h3><span>Email:</span> ${rec.email}</h3><h4><span>first name:</span>${rec.first_name}</h4><h4><span>last name:</span>${rec.last_name}</h4><p><img src="${rec.last_name}" alt=""><p></div><br>`)
           }
       }
   })
